@@ -7,12 +7,12 @@ const CardAlias = props => {
     content
   } = props
   return (
-    <>
+    <div style={{width: '300px'}}>
     <div style={{height: '3px', width: '100%', backgroundColor: 'green'}}></div>
     <Segment attached className='cursor-pointer'>
       
       <div style={{display: 'flex', justifyContent: 'center'}}>
-      <Header as='h3'>{content}</Header>
+      <Header as='h3' style={{maxWidth: '300px', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden'}}>{content}</Header>
       </div>
     </Segment>
 
@@ -26,7 +26,7 @@ const CardAlias = props => {
 <Icon name='edit' color='blue' className='cursor-pointer' />
     </layouting.FullNFillInRow>
     </Segment>
-    </>
+    </div>
   )
 }
 

@@ -2,62 +2,25 @@ import React from 'react'
 import { Grid } from 'semantic-ui-react'
 import CardAlias from './CardAlias'
 import CardBoxAlias from './CardBoxAlias'
+import { layouting } from 'components'
+
+const CardExplorer = props => {
+  return (
+    <layouting.PageLayout
+      
+    />
+  )
+}
 
 
-const CardExplorer = props => (
-  <Grid columns={4}>
-    <Grid.Row>
-      <Grid.Column>
-        <div style={{padding: '10px'}}>
-        <CardAlias content='abbreviation'/>
-        </div>
-      </Grid.Column>
+const CardExplorer1 = props => (
+  <div style={{display: 'flex'}}>
+    <CardAlias content='abbreviation'/>
+    <CardAlias content='go'/>
+    <CardAlias content='docker restart mongoserver'/>
+    <CardAlias content='$ docker run --name some-mongo -d mongo:tag'/>
+  </div>
 
-      <Grid.Column>
-      <div style={{padding: '10px'}}>
-        <CardAlias content='go'/>
-        </div>
-      </Grid.Column>
-
-      <Grid.Column>
-        <div style={{padding: '10px'}}>
-        <CardAlias content='docker restart mongoserver'/>
-        </div>
-      </Grid.Column>
-
-      <Grid.Column>
-        <div style={{padding: '10px'}}>
-          <CardAlias content='$ docker run --name some-mongo -d mongo:tag'/>
-        </div>
-      </Grid.Column>
-    </Grid.Row>
-
-
-    <Grid.Row>
-      <Grid.Column>
-        <div style={{padding: '10px'}}>
-        <CardAlias content='ok'/>
-        </div>
-      </Grid.Column>
-
-      <Grid.Column>
-        <div style={{padding: '10px'}}>
-          <CardAlias content='virtualization'/>
-        </div>
-      </Grid.Column>
-
-      <Grid.Column>
-      <div style={{padding: '10px'}}>
-        <CardBoxAlias content='Waiting For Godot' />
-        </div>
-      </Grid.Column>
-
-      <Grid.Column>
-      </Grid.Column>
-    </Grid.Row>
-
-    
-  </Grid>
 )
 
 export default CardExplorer

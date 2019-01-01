@@ -7,7 +7,7 @@ import { layouting } from 'components'
 const CardExplorer = props => {
   return (
     <div style={{display: 'flex', padding: '10px'}}>
-    <CardAlias content='abbreviation' progress={0}/>
+    <CardAlias content='abbreviation' progress={0} editMode />
     <CardAlias content='go' progress={5}/>
     <CardAlias content='docker restart mongoserver' progress={7}/>
     <CardAlias content='$ docker run --name some-mongo -d mongo:tag' progress={4} />

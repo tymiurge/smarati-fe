@@ -5,8 +5,9 @@ import { layouting, controls } from 'components'
 const CardAlias = props => {
   const {
     content,
-    progress
+    progress,
   } = props
+  const editMode = props.editMode !== undefined ? props.editMode : false
   return (
     <div style={{width: '300px'}}>
     {/* <div style={{height: '3px', width: '100%', backgroundColor: 'green'}}></div> */}
@@ -23,9 +24,12 @@ const CardAlias = props => {
       <div> 
         <Label color='blue' size='tiny'>Elliot</Label>
         <Label color='blue' size='tiny'>linux</Label>
-      {/* <Icon name='edit' color='blue' className='cursor-pointer' /> */}
       </div>
-<Icon name='edit' color='blue' className='cursor-pointer' />
+      <Icon
+        name={editMode ? 'trash' : 'edit'}
+        color={editMode ? 'red' : 'blue'}
+        className='cursor-pointer'
+      />
     </layouting.FullNFillInRow>
     </Segment>
     </div>

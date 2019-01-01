@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
 import CardAlias from './CardAlias'
+import CardBoxAlias from './CardBoxAlias'
 
 
 const CardExplorer = props => (
@@ -40,15 +41,18 @@ const CardExplorer = props => (
       </Grid.Column>
 
       <Grid.Column>
-      <div style={{padding: '10px'}}>
-        <CardAlias content='virtualization'/>
+        <div style={{padding: '10px'}}>
+          <CardAlias content='virtualization'/>
         </div>
       </Grid.Column>
 
-      <Grid.Column>3
+      <Grid.Column>
+      <div style={{padding: '10px'}}>
+        <CardBoxAlias content='Waiting For Godot' />
+        </div>
       </Grid.Column>
 
-      <Grid.Column>4
+      <Grid.Column>
       </Grid.Column>
     </Grid.Row>
 

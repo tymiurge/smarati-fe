@@ -9,11 +9,11 @@ const CardAlias = props => {
   return (
     <>
     <div style={{height: '3px', width: '100%', backgroundColor: 'green'}}></div>
-    <Segment attached className='cursor-pointer'>
-      
-      <div style={{display: 'flex', justifyContent: 'center'}}>
-      <Header as='h3'>{content}</Header>
-      </div>
+    <Segment attached style={{backgroundColor: 'blue'}} className='cursor-pointer'>
+      <layouting.FillNFullInRow>
+        <Icon name='inbox' style={{color: 'white', marginRight: '15px'}} size='large'/> 
+        <Header as='h3' style={{color: 'white'}}>{content}</Header>
+      </layouting.FillNFullInRow>
     </Segment>
 
     <Segment attached style={{padding: '4px'}}>

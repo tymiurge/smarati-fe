@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "components": "file:src/components",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "semantic-ui-css": "^2.4.1",

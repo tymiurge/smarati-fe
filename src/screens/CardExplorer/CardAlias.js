@@ -1,14 +1,16 @@
 import React from 'react'
 import { Segment, Header, Label, Icon } from 'semantic-ui-react'
-import { layouting } from 'components'
+import { layouting, controls } from 'components'
 
 const CardAlias = props => {
   const {
-    content
+    content,
+    progress
   } = props
   return (
     <div style={{width: '300px'}}>
-    <div style={{height: '3px', width: '100%', backgroundColor: 'green'}}></div>
+    {/* <div style={{height: '3px', width: '100%', backgroundColor: 'green'}}></div> */}
+    <controls.DashedProgress progress={progress} />
     <Segment attached className='cursor-pointer'>
       
       <div style={{display: 'flex', justifyContent: 'center'}}>

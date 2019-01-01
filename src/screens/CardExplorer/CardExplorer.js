@@ -6,21 +6,16 @@ import { layouting } from 'components'
 
 const CardExplorer = props => {
   return (
-    <layouting.PageLayout
-      
-    />
+    <div style={{display: 'flex', padding: '10px'}}>
+    <CardAlias content='abbreviation' progress={0}/>
+    <CardAlias content='go' progress={5}/>
+    <CardAlias content='docker restart mongoserver' progress={7}/>
+    <CardAlias content='$ docker run --name some-mongo -d mongo:tag' progress={4} />
+  </div>
   )
 }
 
 
-const CardExplorer1 = props => (
-  <div style={{display: 'flex'}}>
-    <CardAlias content='abbreviation'/>
-    <CardAlias content='go'/>
-    <CardAlias content='docker restart mongoserver'/>
-    <CardAlias content='$ docker run --name some-mongo -d mongo:tag'/>
-  </div>
 
-)
 
 export default CardExplorer

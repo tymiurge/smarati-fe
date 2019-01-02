@@ -63,11 +63,13 @@ const styles = {
 }
 
 const propTypes = {
-  mainBody: PropTypes.object
+  mainBody: PropTypes.object,
+  gutterBody: PropTypes.object
 }
 
 const defaultProps = {
-  mainBody: (<></>)
+  mainBody: (<></>),
+  gutterBody: (<></>)
 }
 
 const PageLayout = props => {
@@ -77,7 +79,9 @@ const PageLayout = props => {
       <div style={{...styles.gutter}}>
         <div style={styles.gutterContainer}>
           <div style={styles.gutterLogo}>logo</div>
-          <div style={{...styles.gutterBody, height: `${fullHeight - vars.headerHeight}px`}}>nav</div>
+          <div style={{...styles.gutterBody, height: `${fullHeight - vars.headerHeight}px`}}>
+            <props.gutterBody />
+          </div>
         </div>
       </div>
       <div style={{...styles.aside}}>

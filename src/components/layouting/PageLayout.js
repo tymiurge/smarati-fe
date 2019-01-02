@@ -1,63 +1,89 @@
 import React from 'react'
-import { Grid, Header, Button, Table } from 'semantic-ui-react'
-import { layouting } from 'components'
-import CardAlias from './../../screens/CardExplorer/CardAlias'
+
+const vars = {
+  headerHeight: 47
+}
+
+const styles = {
+  container: {
+    display: 'flex',
+    //justifyContent: 'space-around',
+    //alignItems: 'stretch',
+    //width: '100%'
+  },
+
+  gutter: {
+    width: '50px',
+    flex: '0 0 50px',
+    backgroundColor: 'green'
+  },
+  gutterContainer: {
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  gutterLogo: {
+    height: `${vars.headerHeight}px`
+  },
+  gutterBody: {
+    backgroundColor: 'purple'
+  },
+  aside: {
+    width: '300px',
+    flex: '0 0 300px',
+  },
+  auxiliarySection: {
+    height: `${vars.headerHeight}px`,
+  },
+  asideContainer: {
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  asideHeader: {
+    height: `${vars.headerHeight}px`,
+    backgroundColor: 'yellow'
+  },
+  asideBody: {
+    backgroundColor: 'brown'
+  },
+
+  main: {
+    width: '100%'
+  },
+  mainContainer: {
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  mainBody: {
+    backgroundColor: 'blue'
+  }
+  
+}
 
 const PageLayout = props => {
   const fullHeight = window.innerHeight
   return (
-    <layouting.FillNFullInRow>
-      <div style={{width: '50px', height: `${fullHeight}px`}}>
-        <div style={{width: '50px', height: `${47}px`, padding: '.38em'}}>
-          <Button icon='home' />
-        </div>
-        <div style={{width: '50px', padding: '.38em'}}>
-          <Button icon='sticky note' />
-          <Button icon='tasks' style={{marginTop: '.38em'}}/>
-          <Button icon='find' style={{marginTop: '.38em'}}/>
-          <Button icon='area chart' style={{marginTop: '.38em'}}/>
-          
+    <div style={styles.container}>
+      <div style={{...styles.gutter}}>
+        <div style={styles.gutterContainer}>
+          <div style={styles.gutterLogo}>logo</div>
+          <div style={{...styles.gutterBody, height: `${fullHeight - vars.headerHeight}px`}}>nav</div>
         </div>
       </div>
-      <Grid celled style={{margin: 0}}>
-      
-      <Grid.Row style={{height: '47px'}}>
-        <Grid.Column width={3}>
-        <Header as='h3' color='blue'>Cards Explored</Header>
-        </Grid.Column>
-        <Grid.Column width={13} style={{padding: '.38em'}}>
-          <Button icon='plus' />
-          <Button icon='search' />
-          
-        </Grid.Column>
-      </Grid.Row>
-
-      <Grid.Row style={{height: `${fullHeight - 94}px`}}>
-        <Grid.Column width={3}>
-        aside body
-        </Grid.Column>
-        <Grid.Column width={13}>
-          
-                
-                
-                
-                
-          
-        </Grid.Column>
-      </Grid.Row>
-
-      <Grid.Row style={{height: '47px'}}>
-        <Grid.Column width={3}>
-        aside footer
-        </Grid.Column>
-        <Grid.Column width={13}>
-        main footer
-        </Grid.Column>
-      </Grid.Row>
-
-    </Grid>
-    </layouting.FillNFullInRow>
-  
+      <div style={{...styles.aside}}>
+        <div style={styles.asideContainer}>
+          <div style={styles.auxiliarySection}>AAA</div>
+          <div style={{...styles.asideBody, height: `${fullHeight - 2 * vars.headerHeight}px`}}>AAA</div>
+          <div style={styles.auxiliarySection}>aside footer</div>
+        </div>
+      </div>
+      <div style={styles.main}>
+        <div style={styles.mainContainer}>
+          <div style={{...styles.auxiliarySection, backgroundColor: 'yellow'}}>AAA</div>
+          <div style={{...styles.mainBody, height: `${fullHeight - 2 * vars.headerHeight}px`}}>AAA</div>
+          <div style={{...styles.auxiliarySection, backgroundColor: 'yellow'}}>aside footer</div>
+        </div>
+      </div>
+    </div>
   )
 }
 

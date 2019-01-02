@@ -6,6 +6,12 @@ import { layouting } from 'components'
 
 const CardExplorer = props => {
   return (
+    <layouting.PageLayout />
+  )
+}
+
+const CardExplorer1 = props => {
+  return (
     <div style={{display: 'flex', padding: '10px'}}>
     <CardAlias
       content='abbreviation' progress={0} editMode

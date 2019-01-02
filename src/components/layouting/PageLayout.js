@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const vars = {
   headerHeight: 47
@@ -54,9 +55,16 @@ const styles = {
     flexDirection: 'column'
   },
   mainBody: {
-    backgroundColor: 'blue'
   }
-  
+
+}
+
+const propTypes = {
+  mainBody: PropTypes.object
+}
+
+const defaultProps = {
+  mainBody: (<></>)
 }
 
 const PageLayout = props => {
@@ -72,19 +80,26 @@ const PageLayout = props => {
       <div style={{...styles.aside}}>
         <div style={styles.asideContainer}>
           <div style={styles.auxiliarySection}>AAA</div>
-          <div style={{...styles.asideBody, height: `${fullHeight - 2 * vars.headerHeight}px`}}>AAA</div>
+          <div style={{...styles.asideBody, height: `${fullHeight - 2 * vars.headerHeight}px`}}>
+            aside body
+          </div>
           <div style={styles.auxiliarySection}>aside footer</div>
         </div>
       </div>
       <div style={styles.main}>
         <div style={styles.mainContainer}>
           <div style={{...styles.auxiliarySection, backgroundColor: 'yellow'}}>AAA</div>
-          <div style={{...styles.mainBody, height: `${fullHeight - 2 * vars.headerHeight}px`}}>AAA</div>
+          <div style={{...styles.mainBody, height: `${fullHeight - 2 * vars.headerHeight}px`}}>
+            { props.mainBody }
+          </div>
           <div style={{...styles.auxiliarySection, backgroundColor: 'yellow'}}>aside footer</div>
         </div>
       </div>
     </div>
   )
 }
+
+PageLayout.propTypes = propTypes
+PageLayout.defaultProps = defaultProps
 
 export default PageLayout

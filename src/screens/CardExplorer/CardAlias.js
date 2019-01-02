@@ -23,8 +23,9 @@ const CardAlias = props => {
     progress,
   } = props
   const editMode = props.editMode !== undefined ? props.editMode : false
+  const containerStyle = props.containerStyle || {margin: '3px'}
   return (
-    <div style={{width: '300px'}}>
+    <div style={{width: '300px', ...containerStyle}}>
       <controls.DashedProgress progress={progress} />
 
       <Segment attached className='cursor-pointer'>

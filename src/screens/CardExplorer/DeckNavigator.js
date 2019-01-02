@@ -6,6 +6,9 @@ const styles = {
     width: '100%',
     height: '100%',
     padding: '.38em'
+  },
+  selected: {
+    backgroundColor: '#2185d0'
   }
 }
 
@@ -40,23 +43,43 @@ const decks = [
   {id: 28, title: 'Kubernates commands'},
   {id: 29, title: 'Kubernates commands'},
   {id: 30, title: 'Kubernates commands'},
-  
 ]
 
-const DeckNavigator = props => (
-  <div style={styles.container}>
-    <List selection verticalAlign='middle'>
-    {
-      decks.map(deck => (
-        <List.Item key={deck.id}>
-          <List.Content>
-            <List.Header>{deck.title}</List.Header>
-          </List.Content>
-        </List.Item>    
-      ))
-    }
-  </List>
-  </div>
-)
+class DeckNavigator extends React.Component {
+
+  state = {
+    selected: 0
+  }
+
+  onItemSelect = id => {
+    this.setState(
+      {...this.state, selected: id}
+    )
+  }
+  
+
+  render() {
+    const { state } = this
+    return (
+      <div style={styles.container}>
+        <List selection verticalAlign='middle'>
+        {
+          decks.map(deck => (
+            <List.Item
+              key={deck.id}
+              style={deck.id === state.selected ? styles.selected : {}}
+              onClick={() => this.onItemSelect(deck.id)}
+            >
+              <List.Content>
+                <List.Header>{deck.title}</List.Header>
+              </List.Content>
+            </List.Item>    
+          ))
+        }
+        </List>
+      </div>
+    )
+  }
+}
 
 export default DeckNavigator

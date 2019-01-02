@@ -3,7 +3,11 @@ import PropTypes from 'prop-types'
 
 const vars = {
   headerHeight: 47,
-  borderColor: '#d4d4d5'
+  borderColor: '#d4d4d5',
+  yScrollable: {
+    overflowX: 'hidden',
+    overflowY: 'auto'
+  }
 }
 
 const styles = {
@@ -48,6 +52,7 @@ const styles = {
     zIndex: '3'
   },
   asideBody: {
+    ...vars.yScrollable
   },
   main: {
     width: '100%',
@@ -65,13 +70,23 @@ const styles = {
 const propTypes = {
   mainBody: PropTypes.object,
   gutterBody: PropTypes.object,
-  gutterLogo: PropTypes.object
+  gutterLogo: PropTypes.object,
+  asideHeader: PropTypes.object,
+  asideBody: PropTypes.object,
+  mainHeader: PropTypes.object,
+  asideFooter: PropTypes.object,
+  mainFooter: PropTypes.object
 }
 
 const defaultProps = {
   mainBody: (<></>),
   gutterBody: (<></>),
-  gutterLogo: (<></>)
+  gutterLogo: (<></>),
+  asideHeader: (<></>),
+  asideBody: (<></>),
+  mainHeader: (<></>),
+  asideFooter: (<></>),
+  mainFooter: (<></>)
 }
 
 const PageLayout = props => {
@@ -90,20 +105,28 @@ const PageLayout = props => {
       </div>
       <div style={{...styles.aside}}>
         <div style={styles.asideContainer}>
-          <div style={styles.auxiliaryHeader}>AAA</div>
-          <div style={{...styles.asideBody, height: `${fullHeight - 2 * vars.headerHeight}px`}}>
-            aside body
+          <div style={styles.auxiliaryHeader}>
+            { props.asideHeader }
           </div>
-          <div style={styles.auxiliaryFooter}>aside footer</div>
+          <div style={{...styles.asideBody, height: `${fullHeight - 2 * vars.headerHeight}px`}}>
+            { props.asideBody }
+          </div>
+          <div style={styles.auxiliaryFooter}>
+            { props.asideFooter }
+          </div>
         </div>
       </div>
       <div style={styles.main}>
         <div style={styles.mainContainer}>
-          <div style={{...styles.auxiliaryHeader}}>main header</div>
+          <div style={{...styles.auxiliaryHeader}}>
+            { props.mainHeader }
+          </div>
           <div style={{...styles.mainBody, height: `${fullHeight - 2 * vars.headerHeight}px`}}>
             { props.mainBody }
           </div>
-          <div style={{...styles.auxiliaryFooter}}>aside footer</div>
+          <div style={{...styles.auxiliaryFooter}}>
+            { props.mainFooter }
+          </div>
         </div>
       </div>
     </div>

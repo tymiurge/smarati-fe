@@ -1,9 +1,11 @@
 import LeftNavigation from './LeftNavigation'
 import HomeNavigation from './HomeNavigation'
+import TitleSection from './TitleSection'
 
 const domain = {
   LeftNavigation,
-  HomeNavigation
+  HomeNavigation,
+  TitleSection
 }
 
 export { domain }

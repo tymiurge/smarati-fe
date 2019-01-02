@@ -1,6 +1,7 @@
 import React from 'react'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Button } from 'semantic-ui-react'
 import CardAlias from './CardAlias'
+import DeckNavigator from './DeckNavigator'
 import { layouting, domain } from 'components'
 
 const styles = {
@@ -15,6 +16,11 @@ const styles = {
   },
   relaxedRow: {
     padding: '0.2em 0.2em'
+  },
+  toolbarContainer: {
+    width: '100%',
+    height: '100%',
+    padding: '.38em'
   }
 }
 
@@ -24,7 +30,19 @@ const CardExplorer = props => {
       gutterBody={(<domain.LeftNavigation />)}
       mainBody={(<CardExplorer1 />)}
       gutterLogo={(<domain.HomeNavigation />)}
+      asideHeader={(<domain.TitleSection />)}
+      asideBody={(<DeckNavigator />)}
+      mainHeader={(<Toolbar />)}
     />
+  )
+}
+
+const Toolbar = props => {
+  return (
+    <div style={styles.toolbarContainer}>
+      <Button icon='plus' />
+      <Button icon='search' />
+    </div>
   )
 }
 

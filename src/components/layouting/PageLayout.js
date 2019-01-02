@@ -89,10 +89,27 @@ const defaultProps = {
   mainFooter: (<></>)
 }
 
-const PageLayout = props => {
-  const fullHeight = window.innerHeight
-  return (
-    <div style={styles.container}>
+/*
+componentDidMount: function() {
+        window.addEventListener("resize", this.updateDimensions);
+    },
+*/
+
+class PageLayout extends React.Component {
+  state = {
+    fullHeight: window.innerHeight
+  }
+  componentDidMount() {
+    window.addEventListener("resize", this.onResize);  
+  }
+  onResize = () => {
+    this.setState({...this.state, fullHeight: window.innerHeight})
+  }
+  render() {
+    const { props } = this
+    const { fullHeight } = this.state
+    return(
+      <div style={styles.container}>
       <div style={{...styles.gutter}}>
         <div style={styles.gutterContainer}>
           <div style={styles.gutterLogo}>
@@ -130,7 +147,8 @@ const PageLayout = props => {
         </div>
       </div>
     </div>
-  )
+    )
+  }
 }
 
 PageLayout.propTypes = propTypes

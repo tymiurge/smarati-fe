@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
 import CardAlias from './CardAlias'
-import { layouting } from 'components'
+import { layouting, domain } from 'components'
 
 const styles = {
   relaxedCell: {
@@ -21,7 +21,9 @@ const styles = {
 const CardExplorer = props => {
   return (
     <layouting.PageLayout
-      
+      gutterBody={(<domain.LeftNavigation />)}
+      mainBody={(<CardExplorer1 />)}
+      gutterLogo={(<domain.HomeNavigation />)}
     />
   )
 }

@@ -1,7 +1,9 @@
 import LeftNavigation from './LeftNavigation'
+import HomeNavigation from './HomeNavigation'
 
 const domain = {
-  LeftNavigation
+  LeftNavigation,
+  HomeNavigation
 }
 
 export { domain }

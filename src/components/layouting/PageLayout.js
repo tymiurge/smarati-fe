@@ -19,7 +19,8 @@ const styles = {
     flexDirection: 'column'
   },
   gutterLogo: {
-    height: `${vars.headerHeight}px`
+    height: `${vars.headerHeight}px`,
+    boxShadow: `0 1px 0 0 ${vars.borderColor}`,
   },
   gutterBody: {
     
@@ -30,7 +31,6 @@ const styles = {
     boxShadow: `-1px 0 0 0 ${vars.borderColor}`,
     zIndex: '1'
   },
-
   asideContainer: {
     display: 'flex',
     flexDirection: 'column'
@@ -64,12 +64,14 @@ const styles = {
 
 const propTypes = {
   mainBody: PropTypes.object,
-  gutterBody: PropTypes.object
+  gutterBody: PropTypes.object,
+  gutterLogo: PropTypes.object
 }
 
 const defaultProps = {
   mainBody: (<></>),
-  gutterBody: (<></>)
+  gutterBody: (<></>),
+  gutterLogo: (<></>)
 }
 
 const PageLayout = props => {
@@ -78,9 +80,11 @@ const PageLayout = props => {
     <div style={styles.container}>
       <div style={{...styles.gutter}}>
         <div style={styles.gutterContainer}>
-          <div style={styles.gutterLogo}>logo</div>
+          <div style={styles.gutterLogo}>
+            { props.gutterLogo }
+          </div>
           <div style={{...styles.gutterBody, height: `${fullHeight - vars.headerHeight}px`}}>
-            <props.gutterBody />
+            { props.gutterBody }
           </div>
         </div>
       </div>

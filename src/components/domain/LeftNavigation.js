@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Popup } from 'semantic-ui-react'
+import { Button, Popup, Icon } from 'semantic-ui-react'
 
 const styles = {
   container: {
@@ -12,14 +12,29 @@ const styles = {
 const LeftNavigation = props => (
   <div style={styles.container}>
     <Popup
-      trigger={(<Button icon='sticky note' />)}
-      content={<div style={{marginLeft: '8px'}}>Card Explorer</div>}
-      position='right'
+      trigger={(<Button icon='sticky note' color='blue'/>)}
+      content={'Card Explorer'}
+      position='right center'
       inverted
     />
-    <Button icon='tasks' style={{marginTop: '.38em'}}/>
-    <Button icon='find' style={{marginTop: '.38em'}}/>
-    <Button icon='area chart' style={{marginTop: '.38em'}}/>
+    <Popup
+      trigger={(<Button icon='tasks' style={{marginTop: '.38em'}}/>)}
+      content={'Learning Programs'}
+      position='right center'
+      inverted
+    />
+    <Popup
+      trigger={(<Button icon='find' style={{marginTop: '.38em'}}/>)}
+      content={'Community Decks'}
+      position='right center'
+      inverted
+    />
+    <Popup
+      trigger={(<Button icon='area chart' style={{marginTop: '.38em'}}/>)}
+      content={'Statistics'}
+      position='right center'
+      inverted
+    />
   </div>
 )
 

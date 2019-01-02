@@ -2,21 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const vars = {
-  headerHeight: 47
+  headerHeight: 47,
+  borderColor: '#d4d4d5'
 }
 
 const styles = {
   container: {
     display: 'flex',
-    //justifyContent: 'space-around',
-    //alignItems: 'stretch',
-    //width: '100%'
   },
-
   gutter: {
     width: '50px',
     flex: '0 0 50px',
-    backgroundColor: 'green'
   },
   gutterContainer: {
     display: 'flex',
@@ -26,29 +22,36 @@ const styles = {
     height: `${vars.headerHeight}px`
   },
   gutterBody: {
-    backgroundColor: 'purple'
+    
   },
   aside: {
     width: '300px',
     flex: '0 0 300px',
+    boxShadow: `-1px 0 0 0 ${vars.borderColor}`,
+    zIndex: '1'
   },
-  auxiliarySection: {
-    height: `${vars.headerHeight}px`,
-  },
+
   asideContainer: {
     display: 'flex',
     flexDirection: 'column'
   },
-  asideHeader: {
+  auxiliaryHeader: {
     height: `${vars.headerHeight}px`,
-    backgroundColor: 'yellow'
+    boxShadow: `0 1px 0 0 ${vars.borderColor}`,
+    border: 'none',
+    zIndex: '3'
+  },
+  auxiliaryFooter: {
+    height: `${vars.headerHeight}px`,
+    boxShadow: `0 -1px 0 0 ${vars.borderColor}`,
+    border: 'none',
+    zIndex: '3'
   },
   asideBody: {
-    backgroundColor: 'brown'
   },
-
   main: {
-    width: '100%'
+    width: '100%',
+    boxShadow: `-1px 0 0 0 ${vars.borderColor}`,
   },
   mainContainer: {
     display: 'flex',
@@ -79,20 +82,20 @@ const PageLayout = props => {
       </div>
       <div style={{...styles.aside}}>
         <div style={styles.asideContainer}>
-          <div style={styles.auxiliarySection}>AAA</div>
+          <div style={styles.auxiliaryHeader}>AAA</div>
           <div style={{...styles.asideBody, height: `${fullHeight - 2 * vars.headerHeight}px`}}>
             aside body
           </div>
-          <div style={styles.auxiliarySection}>aside footer</div>
+          <div style={styles.auxiliaryFooter}>aside footer</div>
         </div>
       </div>
       <div style={styles.main}>
         <div style={styles.mainContainer}>
-          <div style={{...styles.auxiliarySection, backgroundColor: 'yellow'}}>AAA</div>
+          <div style={{...styles.auxiliaryHeader}}>main header</div>
           <div style={{...styles.mainBody, height: `${fullHeight - 2 * vars.headerHeight}px`}}>
             { props.mainBody }
           </div>
-          <div style={{...styles.auxiliarySection, backgroundColor: 'yellow'}}>aside footer</div>
+          <div style={{...styles.auxiliaryFooter}}>aside footer</div>
         </div>
       </div>
     </div>

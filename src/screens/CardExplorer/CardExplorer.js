@@ -21,7 +21,7 @@ const styles = {
 const CardExplorer = props => {
   return (
     <layouting.PageLayout
-      mainBody={<CardExplorer1 />}  
+      
     />
   )
 }

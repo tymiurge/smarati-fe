@@ -33,7 +33,11 @@ const CardExplorer = props => {
       gutterLogo={(<domain.HomeNavigation />)}
       asideHeader={(<domain.TitleSection />)}
       asideBody={(<DeckNavigator />)}
-      mainHeader={(<Toolbar />)}
+      mainHeader={(
+        <Toolbar
+          onCardAddRequest={() => alert('ok, i will add card')}
+        />
+      )}
     />
   )
 }

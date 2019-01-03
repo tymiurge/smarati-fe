@@ -26,7 +26,7 @@ class SearchMode extends React.Component {
     this.props.onSubmit(this.state.value)
   }
   render() {
-    const { css, onCancel } = this.props
+    const { css, onClose } = this.props
     const { state } = this
     return (
       <div style={css.container}>
@@ -38,7 +38,7 @@ class SearchMode extends React.Component {
           />
           <div>
             <Button icon='check' style={css.firstButton} onSubmit={this.onSubmit}/>
-            <Button icon='cancel' onClick={onCancel}/>
+            <Button icon='cancel' onClick={onClose}/>
           </div>
         </layouting.FullNFillInRow>
       </div>  

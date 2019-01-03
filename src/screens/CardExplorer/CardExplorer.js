@@ -1,7 +1,8 @@
 import React from 'react'
-import { Grid, Button } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import CardAlias from './CardAlias'
 import DeckNavigator from './DeckNavigator'
+import Toolbar from './Toolbar'
 import { layouting, domain } from 'components'
 
 const styles = {
@@ -34,15 +35,6 @@ const CardExplorer = props => {
       asideBody={(<DeckNavigator />)}
       mainHeader={(<Toolbar />)}
     />
-  )
-}
-
-const Toolbar = props => {
-  return (
-    <div style={styles.toolbarContainer}>
-      <Button icon='plus' />
-      <Button icon='search' />
-    </div>
   )
 }
 

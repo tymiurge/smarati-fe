@@ -1,7 +1,8 @@
 import React from 'react'
 import { List } from 'semantic-ui-react'
+import { cardExplorer, withStyles } from 'component-styles'
 
-const styles = {
+const css1 = {
   container: {
     width: '100%',
     height: '100%',
@@ -59,15 +60,16 @@ class DeckNavigator extends React.Component {
   
 
   render() {
-    const { state } = this
+    const { state, props } = this
+    const { css } = props
     return (
-      <div style={styles.container}>
+      <div style={css.container}>
         <List selection verticalAlign='middle'>
         {
           decks.map(deck => (
             <List.Item
               key={deck.id}
-              style={deck.id === state.selected ? styles.selected : {}}
+              style={deck.id === state.selected ? css.selected : {}}
               onClick={() => this.onItemSelect(deck.id)}
             >
               <List.Content>
@@ -82,4 +84,4 @@ class DeckNavigator extends React.Component {
   }
 }
 
-export default DeckNavigator
+export default withStyles(cardExplorer.deckNavigator)(DeckNavigator)

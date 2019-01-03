@@ -6,6 +6,6 @@ export {
 }
 
 export const withStyles = styles => Origin => {
-  const HOC = () => () => React.cloneElement(<Origin />, {css: styles})
+  const HOC = () => props => React.cloneElement(<Origin />, {...props, css: styles})
   return HOC()
 }

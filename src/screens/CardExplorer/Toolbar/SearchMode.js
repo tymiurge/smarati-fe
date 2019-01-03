@@ -6,7 +6,6 @@ import PropTypes from 'prop-types'
 
 class SearchMode extends React.Component {
   static propTypes = {
-    css: PropTypes.object.isRequired,
     onSubmit: PropTypes.func,
     onCancel: PropTypes.func
   }

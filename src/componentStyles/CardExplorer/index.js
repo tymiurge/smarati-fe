@@ -1,7 +1,9 @@
 import toolbar from './toolbar'
+import cardAlias from './cardAlias'
 
 const cardExplorer = {
-  toolbar
+  toolbar,
+  cardAlias
 }
 
 export default cardExplorer

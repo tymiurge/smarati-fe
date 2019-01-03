@@ -2,6 +2,7 @@ import React from 'react'
 import { Segment, Header, Label, Icon } from 'semantic-ui-react'
 import { layouting, controls } from 'components'
 import PropTypes from 'prop-types'
+import { cardExplorer, withStyles } from 'component-styles'
 
 const propTypes = {
   content: PropTypes.string.isRequired,
@@ -17,10 +18,27 @@ const defaultProps = {
   onRemoveClick: () => {}
 }
 
+const css1 = {
+  contentContainer: {
+    display: 'flex', 
+    justifyContent: 'center'
+  },
+  content: {
+    maxWidth: '300px', 
+    textOverflow: 'ellipsis', 
+    whiteSpace: 'nowrap', 
+    overflow: 'hidden'
+  },
+  metaContainer: {
+    padding: '4px'  
+  }
+}
+
 const CardAlias = props => {
   const {
     content,
     progress,
+    css
   } = props
   const editMode = props.editMode !== undefined ? props.editMode : false
   const containerStyle = props.containerStyle || {}
@@ -29,12 +47,12 @@ const CardAlias = props => {
       <controls.DashedProgress progress={progress} />
 
       <Segment attached className='cursor-pointer'>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
-        <Header as='h3' style={{maxWidth: '300px', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden'}}>{content}</Header>
+        <div style={css.contentContainer}>
+          <Header as='h3' style={css.content}>{content}</Header>
         </div>
       </Segment>
 
-      <Segment attached style={{padding: '4px'}}>
+      <Segment attached style={css.metaContainer}>
         <layouting.FullNFillInRow> 
           <div> 
             <Label color='blue' size='tiny'>Elliot</Label>
@@ -58,4 +76,4 @@ const CardAlias = props => {
 CardAlias.propTypes = propTypes
 CardAlias.defaultProps = defaultProps
 
-export default CardAlias
+export default withStyles(cardExplorer.cardAlias)(CardAlias)

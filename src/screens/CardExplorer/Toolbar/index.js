@@ -6,13 +6,23 @@ import ButtonsMode from './ButtonsMode'
 class Toolbar extends React.Component {
   panels = {
     search: <SearchMode {...this.props} onClose={() => this.onModeSwitch('buttons')} />,
-    buttons: <ButtonsMode {...this.props} onSearchClick={() => this.onModeSwitch('search')} />
+    buttons: <ButtonsMode 
+      {...this.props}
+      onSearchClick={() => this.onModeSwitch('search')}
+      onRemoveModeRequest={() => {
+        this.onModeSwitch('remove', () => this.props.onRemoveModeRequest())  
+      }}
+    />,
+    remove: <div>remove mode </div>
   }
-  onModeSwitch = mode => {
+  onModeSwitch = (mode, callback = () => {}) => {
     if (this.panels[mode] === undefined) {
       throw new Error(`Toolbar does not have ${mode} mode`)
     }
-    this.setState({...this.state, mode})
+    this.setState(
+      {...this.state, mode},
+      callback
+    )
   }
   state = {
     mode: 'buttons'

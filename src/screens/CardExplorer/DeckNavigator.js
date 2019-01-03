@@ -2,17 +2,6 @@ import React from 'react'
 import { List } from 'semantic-ui-react'
 import { cardExplorer, withStyles } from 'component-styles'
 
-const css1 = {
-  container: {
-    width: '100%',
-    height: '100%',
-    padding: '.38em'
-  },
-  selected: {
-    backgroundColor: '#2185d0'
-  }
-}
-
 const decks = [
   {id: 1, title: 'All Cards'},
   {id: 2, title: 'English 100 words'},
@@ -47,18 +36,14 @@ const decks = [
 ]
 
 class DeckNavigator extends React.Component {
-
   state = {
     selected: 0
   }
-
   onItemSelect = id => {
     this.setState(
       {...this.state, selected: id}
     )
   }
-  
-
   render() {
     const { state, props } = this
     const { css } = props

@@ -36,6 +36,7 @@ const CardExplorer = props => {
       mainHeader={(
         <Toolbar
           onCardAddRequest={() => alert('ok, i will add card')}
+          onRemoveModeRequest={() => alert('ok, i will remove cards')}
         />
       )}
     />

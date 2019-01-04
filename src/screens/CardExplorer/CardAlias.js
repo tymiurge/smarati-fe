@@ -22,12 +22,12 @@ const StaticInfo = props => (
 )
 
 const EditModeTools = props => (
-  <Segment attached style={props.css.metaContainer}>
-    <Checkbox
-      label='Select'
-      onChange={props.onSelectChange}
-      checked={props.checked}
-    />
+  <Segment attached style={props.css.metaContainer} className='cursor-pointer'>
+    {
+      props.checked
+        ? <Icon name='check square outline' />
+        : <Icon name='square outline' />
+    }
   </Segment>
 )
 
@@ -53,6 +53,9 @@ class CardAlias extends React.Component {
   state = {
     selected: false
   }
+  toggleSelected = () => {
+    this.setState(state => ({...state, selected: !state.selected}))
+  }
   render() {
     const { props, state } = this
     const {
@@ -63,8 +66,11 @@ class CardAlias extends React.Component {
     const editMode = props.editMode !== undefined ? props.editMode : false
     const containerStyle = props.containerStyle || {}
     return (
-      <div style={{ ...containerStyle}}>
-        <Dimmer.Dimmable as={DimmerContainer} dimmed={true}>
+      <div
+        style={{ ...containerStyle}}
+        onClick={() => !state.selected && this.toggleSelected() }
+      >
+        <Dimmer.Dimmable as={DimmerContainer} dimmed={state.selected}>
         <controls.DashedProgress progress={progress} />
         <Segment attached className='cursor-pointer'>
           <div style={css.contentContainer}>
@@ -73,18 +79,18 @@ class CardAlias extends React.Component {
         </Segment>
         {
           editMode 
-            ? <EditModeTools {...props} onSelectChange={() => alert('changing')} checked={state.selected} />
+            ? <EditModeTools {...props} checked={state.selected} />
             : <StaticInfo {...props} />
         }
           <Dimmer
-            active={true}
-            onClickOutside={() => alert('ok')}
+            active={state.selected}
+            onClickOutside={this.toggleSelected}
             className='cursor-pointer'
           >
-            <Header as='h5' icon inverted>
-              <Icon name='check' />
+            <div onClick={this.toggleSelected}>
+              <div><Icon name='check' size='big'/></div>
               Click To Uncheck
-            </Header>
+            </div>
           </Dimmer>
         </Dimmer.Dimmable>
       </div>  

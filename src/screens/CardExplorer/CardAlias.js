@@ -68,7 +68,7 @@ class CardAlias extends React.Component {
     return (
       <div
         style={{ ...containerStyle}}
-        onClick={() => !state.selected && this.toggleSelected() }
+        onClick={() => props.editMode && !state.selected && this.toggleSelected() }
       >
         <Dimmer.Dimmable as={DimmerContainer} dimmed={state.selected}>
         <controls.DashedProgress progress={progress} />

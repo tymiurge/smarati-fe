@@ -1,19 +1,22 @@
 import React from 'react'
 import SearchMode from './SearchMode'
 import ButtonsMode from './ButtonsMode'
-
+import EditMode from './EditMode'
 
 class Toolbar extends React.Component {
   panels = {
-    search: <SearchMode {...this.props} onClose={() => this.onModeSwitch('buttons')} />,
+    search: <SearchMode
+      {...this.props}
+      onClose={() => this.onModeSwitch('buttons')}
+    />,
     buttons: <ButtonsMode 
       {...this.props}
       onSearchClick={() => this.onModeSwitch('search')}
-      onRemoveModeRequest={() => {
-        this.onModeSwitch('remove', () => this.props.onRemoveModeRequest())  
+      onEditModeRequest={() => {
+        this.onModeSwitch('edit', () => this.props.onEditModeRequest())  
       }}
     />,
-    remove: <div>remove mode </div>
+    edit: <EditMode {...this.props} />
   }
   onModeSwitch = (mode, callback = () => {}) => {
     if (this.panels[mode] === undefined) {

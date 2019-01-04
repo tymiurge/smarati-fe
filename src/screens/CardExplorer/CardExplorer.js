@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
 import CardAlias from './CardAlias'
+import CardGrid from './CardGrid'
 import DeckNavigator from './DeckNavigator'
 import Toolbar from './Toolbar'
 import { layouting, domain } from 'components'
@@ -29,107 +30,18 @@ const CardExplorer = props => {
   return (
     <layouting.PageLayout
       gutterBody={(<domain.LeftNavigation />)}
-      mainBody={(<CardExplorer1 />)}
+      mainBody={(<CardGrid />)}
       gutterLogo={(<domain.HomeNavigation />)}
       asideHeader={(<domain.TitleSection />)}
       asideBody={(<DeckNavigator />)}
       mainHeader={(
         <Toolbar
           onCardAddRequest={() => alert('ok, i will add card')}
-          onRemoveModeRequest={() => alert('ok, i will remove cards')}
+          onEditModeRequest={() => alert('ok, i will switch to edit mode')}
         />
       )}
     />
   )
 }
-
-const CardExplorer1 = props => {
-  return (
-    <Grid style={styles.grid}>
-      <Grid.Row style={styles.relaxedRow}>
-        <Grid.Column width={4} style={styles.relaxedCell}>
-        <CardAlias
-    content='abbreviation' progress={0} editMode
-       onEditClick={() => alert('edit')}
-       onRemoveClick={() => alert('removing')}
-    />
-
-        </Grid.Column>
-        
-        <Grid.Column width={4} style={styles.relaxedCell}>
-        <CardAlias
-      content='go' progress={5}
-      onEditClick={() => alert('edit')}
-      onRemoveClick={() => alert('removing')}
-    />  
-        </Grid.Column>
-
-        <Grid.Column width={4} style={styles.relaxedCell}>
-        <CardAlias
-      content='abbreviation' progress={0} editMode
-      onEditClick={() => alert('edit')}
-      onRemoveClick={() => alert('removing')}
-    />
-        </Grid.Column>
-
-        <Grid.Column width={4} style={styles.relaxedCell}>
-        <CardAlias content='$ docker run --name some-mongo -d mongo:tag' progress={4} />
-        </Grid.Column>
-
-        
-
-      </Grid.Row>
-
-
-      <Grid.Row style={styles.relaxedRow}>
-        <Grid.Column width={4} style={styles.relaxedCell}>
-        <CardAlias
-    content='abbreviation' progress={0} editMode
-       onEditClick={() => alert('edit')}
-       onRemoveClick={() => alert('removing')}
-    />
-
-        </Grid.Column>
-        
-        <Grid.Column width={4} style={styles.relaxedCell}>
-        <CardAlias
-      content='go' progress={5}
-      onEditClick={() => alert('edit')}
-      onRemoveClick={() => alert('removing')}
-    />  
-        </Grid.Column>
-
-        <Grid.Column width={4} style={styles.relaxedCell}>
-        <CardAlias
-      content='abbreviation' progress={0} editMode
-      onEditClick={() => alert('edit')}
-      onRemoveClick={() => alert('removing')}
-    />
-        </Grid.Column>
-
-        <Grid.Column width={4} style={styles.relaxedCell}>
-        <CardAlias content='$ docker run --name some-mongo -d mongo:tag' progress={4} />
-        </Grid.Column>
-
-        
-
-      </Grid.Row>
-
-
-
-    </Grid>
-    
-    // <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>
-    
-    
-    // <CardAlias content='docker restart mongoserver' progress={7}/>
-    
-    // <CardAlias content='$ docker run --name some-mongo -d mongo:tag' progress={4} />
-    // </div>
-  )
-}
-
-
-
 
 export default CardExplorer

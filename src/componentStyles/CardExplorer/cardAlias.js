@@ -1,3 +1,5 @@
+import * as vars from './../variables'
+
 const cardAlias = {
   contentContainer: {
     display: 'flex', 
@@ -11,6 +13,9 @@ const cardAlias = {
   },
   metaContainer: {
     padding: '4px'  
+  },
+  dimmerContainer: {
+    ...vars.noPadding
   }
 }
 

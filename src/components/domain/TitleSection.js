@@ -9,9 +9,9 @@ const styles = {
   }
 }
 
-const TitleSection = props => (
+const TitleSection = ({title}) => (
   <div style={styles.container}>
-    <Header as='h3' color='blue'>Cards Explored</Header>
+    <Header as='h3' color='blue'>{title}</Header>
   </div>
 )
 

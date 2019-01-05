@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Header, Label, Icon, Checkbox, Dimmer } from 'semantic-ui-react'
+import { Segment, Header, Label, Icon, Dimmer } from 'semantic-ui-react'
 import { layouting, controls } from 'components'
 import PropTypes from 'prop-types'
 import { cardExplorer, withStyles } from 'component-styles'
@@ -38,10 +38,10 @@ const DimmerContainer = props => (
 )
  
 const propTypes = {
-  content: PropTypes.string.isRequired,
+  content: PropTypes.string,
   progress: PropTypes.number,
   editMode: PropTypes.bool,
-  onEditClick: PropTypes.func.isRequired,
+  onEditClick: PropTypes.func,
 }
 
 const defaultProps = {
@@ -65,6 +65,7 @@ class CardAlias extends React.Component {
     } = props
     const editMode = props.editMode !== undefined ? props.editMode : false
     const containerStyle = props.containerStyle || {}
+    
     return (
       <div
         style={{ ...containerStyle}}

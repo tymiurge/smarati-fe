@@ -34,6 +34,12 @@ const cards = [
   },
   {
     id: 10, content: 'tazo', progress: 7
+  },
+  {
+    id: 11, content: 'dias', progress: 3
+  },
+  {
+    id: 12, content: 'noches', progress: 3
   }
 ]
 
@@ -49,8 +55,7 @@ const CardGrid = props => {
               rowArr.map(card => (
                 <Grid.Column key={card.id} width={4} style={css.relaxedCell}>
                   <CardAlias
-                    content={card.content}
-                    progress={card.progress}
+                    {...card}
                     editMode={false}
                     onEditClick={() => alert('edit')}
                   />

@@ -11,7 +11,10 @@ const EditMode = props => {
           <controls.DropdownSubmitter />
           <Button icon='trash' color='red' />
         </div>
-        <Button icon='sign-out alternate' color='blue'/>
+        <Button
+          icon='sign-out alternate' color='blue'
+          onClick={props.onExitClick}
+        />
       </layouting.FullNFillInRow>
     </div>
   )

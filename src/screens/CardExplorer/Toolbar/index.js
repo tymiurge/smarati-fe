@@ -13,10 +13,13 @@ class Toolbar extends React.Component {
       {...this.props}
       onSearchClick={() => this.onModeSwitch('search')}
       onEditModeRequest={() => {
-        this.onModeSwitch('edit', () => this.props.onEditModeRequest())  
+        this.onModeSwitch('edit', () => this.props.onModeChange('edit'))  
       }}
     />,
-    edit: <EditMode {...this.props} />
+    edit: <EditMode
+      {...this.props}
+      onExitClick={() => this.onModeSwitch('buttons', () => this.props.onModeChange('buttons'))}
+    />
   }
   onModeSwitch = (mode, callback = () => {}) => {
     if (this.panels[mode] === undefined) {
@@ -28,7 +31,7 @@ class Toolbar extends React.Component {
     )
   }
   state = {
-    mode: 'edit'
+    mode: 'buttons'
   }
   render() {
     const ModeComponent = this.panels[this.state.mode]

@@ -45,7 +45,7 @@ const cards = [
 
 const CardGrid = props => {
   const GRID_ROW_SIZE = 4
-  const { css } = props
+  const { css, editMode } = props
   return (
     <Grid style={css.grid}>
       {
@@ -56,7 +56,7 @@ const CardGrid = props => {
                 <Grid.Column key={card.id} width={4} style={css.relaxedCell}>
                   <CardAlias
                     {...card}
-                    editMode={false}
+                    editMode={editMode}
                     onEditClick={() => alert('edit')}
                   />
                 </Grid.Column>

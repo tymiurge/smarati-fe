@@ -70,7 +70,7 @@ class CardAlias extends React.Component {
         style={{ ...containerStyle}}
         onClick={() => props.editMode && !state.selected && this.toggleSelected() }
       >
-        <Dimmer.Dimmable as={DimmerContainer} dimmed={state.selected}>
+        <Dimmer.Dimmable as={DimmerContainer} dimmed={state.selected && props.editMode}>
         <controls.DashedProgress progress={progress} />
         <Segment attached className='cursor-pointer'>
           <div style={css.contentContainer}>
@@ -83,7 +83,7 @@ class CardAlias extends React.Component {
             : <StaticInfo {...props} />
         }
           <Dimmer
-            active={state.selected}
+            active={state.selected && props.editMode}
             onClickOutside={this.toggleSelected}
             className='cursor-pointer'
           >

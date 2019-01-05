@@ -1,7 +1,9 @@
 import DashedProgress from './DashedProgress'
+import DropdownSubmitter from './DropdownSubmitter'
 
 const controls = {
-  DashedProgress
+  DashedProgress,
+  DropdownSubmitter
 }
 
 export { controls }

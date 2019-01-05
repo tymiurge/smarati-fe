@@ -28,7 +28,7 @@ class Toolbar extends React.Component {
     )
   }
   state = {
-    mode: 'buttons'
+    mode: 'edit'
   }
   render() {
     const ModeComponent = this.panels[this.state.mode]

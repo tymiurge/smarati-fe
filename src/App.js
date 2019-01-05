@@ -1,11 +1,12 @@
 import React from 'react'
-import { CardExplorer } from './screens'
+import { CardExplorer, LearnPrograms } from './screens'
 
 class App extends React.Component {
   render() {
     return (
       <>
-        <CardExplorer />
+        {/* <CardExplorer /> */}
+        <LearnPrograms />
       </>
     );
   }

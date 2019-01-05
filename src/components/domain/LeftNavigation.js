@@ -1,41 +1,52 @@
 import React from 'react'
 import { Button, Popup } from 'semantic-ui-react'
 
-const styles = {
+const css = {
   container: {
     width: '100%',
     height: '100%',
     padding: '.38em'
+  },
+  notFirstItem: {
+    marginTop: '.38em'
   }
 }
 
-const LeftNavigation = props => (
-  <div style={styles.container}>
-    <Popup
-      trigger={(<Button icon='sticky note' color='blue'/>)}
-      content={'Card Explorer'}
-      position='right center'
-      inverted
-    />
-    <Popup
-      trigger={(<Button icon='tasks' style={{marginTop: '.38em'}}/>)}
-      content={'Learning Programs'}
-      position='right center'
-      inverted
-    />
-    <Popup
-      trigger={(<Button icon='find' style={{marginTop: '.38em'}}/>)}
-      content={'Community Decks'}
-      position='right center'
-      inverted
-    />
-    <Popup
-      trigger={(<Button icon='area chart' style={{marginTop: '.38em'}}/>)}
-      content={'Statistics'}
-      position='right center'
-      inverted
-    />
-  </div>
-)
+const navItems = [
+  {name: 'Card Explorer', icon: 'sticky note'},
+  {name: 'Learning Programs', icon: 'tasks'},
+  {name: 'Community Decks', icon: 'find'},
+  {name: 'Statistics', icon: 'area chart'}
+]
+
+const LeftNavigation = props => {
+  const { activeName } = props
+  console.log(activeName)
+  return (
+    <div style={css.container}>
+      {
+        navItems.map((item, idx) => {
+          //const color = item.name === activeName ? 'blue' : 'grey'
+          let buttonProps = {
+            icon: item.icon,
+            style: idx !== 0 ? css.notFirstItem : {}
+          }
+          if (item.name === activeName) {
+            buttonProps = {...buttonProps, color: 'blue'}
+          }
+          return (
+            <Popup
+              key={`nav_item_${item.name}`}
+              trigger={(<Button {...buttonProps} />)}
+              content={item.name}
+              position='right center'
+              inverted
+            />    
+          )
+        })
+      }
+    </div>
+  )
+}
 
 export default LeftNavigation

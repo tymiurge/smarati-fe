@@ -19,7 +19,7 @@ class CardExplorer extends React.Component {
         gutterBody={(<domain.LeftNavigation />)}
         mainBody={(<CardGrid editMode={state.inEdit}/>)}
         gutterLogo={(<domain.HomeNavigation />)}
-        asideHeader={(<domain.TitleSection />)}
+        asideHeader={(<domain.TitleSection title='Card Explorer' />)}
         asideBody={(<DeckNavigator />)}
         mainHeader={(
           <Toolbar

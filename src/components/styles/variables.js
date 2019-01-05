@@ -7,7 +7,8 @@ export const sectionContainer = {
 }
 
 export const colors = {
-  blue: '#2185d0'
+  blue: '#2185d0',
+  lightGray: 'rgba(34,36,38,.15)' 
 }
 
 export const noPadding = {

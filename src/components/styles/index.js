@@ -1,7 +1,9 @@
 import cardExplorer from './CardExplorer'
+import controls from './controls'
 
 const styles = {
-  cardExplorer
+  cardExplorer,
+  controls
 }
 
 export { styles }

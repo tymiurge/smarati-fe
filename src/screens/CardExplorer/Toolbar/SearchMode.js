@@ -1,7 +1,6 @@
 import React from 'react'
-import { cardExplorer, withStyles } from 'component-styles'
 import { Button, Input } from 'semantic-ui-react'
-import { layouting } from 'components'
+import { layouting, styles, withStyles } from 'components'
 import PropTypes from 'prop-types'
 
 class SearchMode extends React.Component {
@@ -45,5 +44,5 @@ class SearchMode extends React.Component {
   }
 }
 
-export default withStyles(cardExplorer.toolbar)(SearchMode)
+export default withStyles(styles.cardExplorer.toolbar)(SearchMode)
 

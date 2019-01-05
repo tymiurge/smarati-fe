@@ -1,7 +1,6 @@
 import React from 'react'
-import { cardExplorer, withStyles } from 'component-styles'
 import { Button } from 'semantic-ui-react'
-import { layouting, controls } from 'components'
+import { layouting, controls, styles, withStyles } from 'components'
 
 const EditMode = props => {
   const { css } = props
@@ -17,4 +16,4 @@ const EditMode = props => {
     </div>
   )
 }
-export default withStyles(cardExplorer.toolbar)(EditMode)
+export default withStyles(styles.cardExplorer.toolbar)(EditMode)

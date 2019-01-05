@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "component-styles": "file:src/componentStyles",
     "components": "file:src/components",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",

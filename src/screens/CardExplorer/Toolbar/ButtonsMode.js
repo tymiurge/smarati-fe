@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button } from 'semantic-ui-react'
-import { withStyles, cardExplorer } from 'component-styles'
-import { layouting } from 'components'
+import { layouting, styles, withStyles } from 'components'
 
 const ButtonsMode = props => {
   const { css, onCardAddRequest, onSearchClick, onEditModeRequest } = props
@@ -18,4 +17,4 @@ const ButtonsMode = props => {
   )
 }
 
-export default withStyles(cardExplorer.toolbar)(ButtonsMode)
+export default withStyles(styles.cardExplorer.toolbar)(ButtonsMode)

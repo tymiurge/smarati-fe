@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid } from 'semantic-ui-react'
 import CardAlias from './CardAlias'
 import { arrs } from 'utils'
-import { cardExplorer, withStyles } from 'component-styles'
+import { styles, withStyles } from 'components'
 
 const cards = [
   {
@@ -69,4 +69,4 @@ const CardGrid = props => {
   )
 }
 
-export default withStyles(cardExplorer.cardGrid)(CardGrid)
+export default withStyles(styles.cardExplorer.cardGrid)(CardGrid)

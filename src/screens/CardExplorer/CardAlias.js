@@ -1,8 +1,7 @@
 import React from 'react'
 import { Segment, Header, Label, Icon, Dimmer } from 'semantic-ui-react'
-import { layouting, controls } from 'components'
+import { layouting, controls, styles, withStyles } from 'components'
 import PropTypes from 'prop-types'
-import { cardExplorer, withStyles } from 'component-styles'
 
 const StaticInfo = props => (
   <Segment attached style={props.css.metaContainer}>
@@ -102,4 +101,4 @@ class CardAlias extends React.Component {
 CardAlias.propTypes = propTypes
 CardAlias.defaultProps = defaultProps
 
-export default withStyles(cardExplorer.cardAlias)(CardAlias)
+export default withStyles(styles.cardExplorer.cardAlias)(CardAlias)

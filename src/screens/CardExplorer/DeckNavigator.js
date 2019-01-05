@@ -1,6 +1,6 @@
 import React from 'react'
 import { List } from 'semantic-ui-react'
-import { cardExplorer, withStyles } from 'component-styles'
+import { styles, withStyles } from 'components'
 
 const decks = [
   {id: 1, title: 'All Cards'},
@@ -69,4 +69,4 @@ class DeckNavigator extends React.Component {
   }
 }
 
-export default withStyles(cardExplorer.deckNavigator)(DeckNavigator)
+export default withStyles(styles.cardExplorer.deckNavigator)(DeckNavigator)

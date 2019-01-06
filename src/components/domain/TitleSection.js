@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header } from 'semantic-ui-react'
 
-const styles = {
+const css = {
   container: {
     width: '100%',
     height: '100%',
@@ -10,7 +10,7 @@ const styles = {
 }
 
 const TitleSection = ({title}) => (
-  <div style={styles.container}>
+  <div style={css.container}>
     <Header as='h3' color='blue'>{title}</Header>
   </div>
 )

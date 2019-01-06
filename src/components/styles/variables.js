@@ -2,6 +2,8 @@ export const elementsGap = '.25em'
 
 export const containerIntend = '.38em'
 
+export const bigContainerIntend = '1em'
+
 export const sectionContainer = {
   width: '100%',
   height: '100%',

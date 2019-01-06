@@ -1,9 +1,11 @@
 import cardExplorer from './CardExplorer'
 import controls from './controls'
+import domain from './domain'
 
 const styles = {
   cardExplorer,
-  controls
+  controls,
+  domain
 }
 
 export { styles }

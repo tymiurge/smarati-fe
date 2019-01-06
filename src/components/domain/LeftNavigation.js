@@ -26,7 +26,6 @@ const LeftNavigation = props => {
     <div style={css.container}>
       {
         navItems.map((item, idx) => {
-          //const color = item.name === activeName ? 'blue' : 'grey'
           let buttonProps = {
             icon: item.icon,
             style: idx !== 0 ? css.notFirstItem : {}

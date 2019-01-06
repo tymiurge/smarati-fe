@@ -1,16 +1,6 @@
 import React from 'react'
 import { Button, Popup } from 'semantic-ui-react'
-
-const css = {
-  container: {
-    width: '100%',
-    height: '100%',
-    padding: '.38em'
-  },
-  notFirstItem: {
-    marginTop: '.38em'
-  }
-}
+import css from './../styles/domain/leftNavigation'
 
 const navItems = [
   {name: 'Card Explorer', icon: 'sticky note'},

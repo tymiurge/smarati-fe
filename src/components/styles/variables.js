@@ -1,9 +1,11 @@
 export const elementsGap = '.25em'
 
+export const containerIntend = '.38em'
+
 export const sectionContainer = {
   width: '100%',
   height: '100%',
-  padding: '.38em'
+  padding: containerIntend
 }
 
 export const colors = {
